@@ -1,25 +1,14 @@
 window.onload = function() {
 	chrome.runtime.onMessage.addListener(function(msg) {
 	    if (msg.msg == "start") {
-	    	var data = [];
-			var tables = document.getElementsByTagName('table');
-
-	    	for (i = 1; i <= 4; i++) {
-	    		data.push(tables[i].innerHTML);
-	    	}
-
-		    var doc = new jsPDF();
-
-		    doc.fromHTML(
-		    	"<table>" + data[2] + "</table>",
-		    	1,
-		    	1,
-		    	{
-		    		'width': 180
-		    	}
-			);
-
-			doc.save('doc.pdf');
+	        html2canvas(document.body, {
+	            onrendered: function(canvas) {        
+	                var imgData = canvas.toDataURL('image/png');          
+	                var doc = new jsPDF("p", "mm", "a2");
+	                doc.addImage(imgData, 'PNG', 1, 1);
+	                doc.save('sample-file.pdf');
+	            }
+	        });
 	    }
 	});
 }
