@@ -1,0 +1,6 @@
+Klik op extension knop
+-- Stuur message dat op knop is gedrukt naar content.js
+Met javascript de tables uitlezen
+Met de uitgelezen data een nieuwe tabel maken
+Tabel uitprinten als PDF
+PDF wordt gedownload.

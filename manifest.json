@@ -1,0 +1,25 @@
+{
+  "name": "Dossier Downloader",
+  "description": "Download Gebouwdossier",
+  "version": "0.1",
+  "background": {
+    "scripts": ["background.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+   {
+     "matches": ["https://*.cag.xelyn.nl/*"],
+     "js": ["content.js"],
+     "all_frames": true
+   }
+  ],
+  "permissions": [
+    "activeTab",
+    "*://*/*"
+  ],
+  "browser_action": {
+      "default_title": "Dossier Downloader",
+      "default_icon": "print_16x16.png"
+  },
+  "manifest_version": 2
+}
