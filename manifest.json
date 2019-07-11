@@ -8,7 +8,7 @@
   },
   "content_scripts": [
    {
-     "matches": ["https://*.cag.xelyn.nl/*"],
+     "matches": ["<all_urls>"],
      "js": ["html2canvas.min.js", "jspdf.min.js", "content.js"],
      "all_frames": true
    }
